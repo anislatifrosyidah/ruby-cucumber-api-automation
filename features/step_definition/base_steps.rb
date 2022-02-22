@@ -1,5 +1,3 @@
-@api_url = "https://api.thecatapi.com/v1"
-
 Given("client want to retrieve list Cat Breeds") do
   @get_all_breads = HTTParty.get 'https://api.thecatapi.com/v1/breeds',
   :headers => {
