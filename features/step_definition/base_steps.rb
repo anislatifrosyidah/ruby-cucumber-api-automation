@@ -52,23 +52,23 @@ Given(/^client search cat breed name by input keyword$/) do
 end
 
 Then(/^response should containing "([^"]*)"$/) do |value|
-expected_value = value
-actual_value = @response.map{|d| d["name"]}
-expect(actual_value.to_s).to include(expected_value)
+  expected_value = value
+  actual_value = @response.map{|d| d["name"]}
+  expect(actual_value.to_s).to include(expected_value)
 end
 
 And(/^client collects first breeds name from breeds lists$/) do
-list_cats = @response_get.map{|d| d["name"]}.to_a
-collected_value = list_cats.first(1)
-@collected_name = (collected_value.to_s).tr('[]""','')
-puts @collected_name
+  list_cats = @response_get.map{|d| d["name"]}.to_a
+  collected_value = list_cats.first(1)
+  @collected_name = (collected_value.to_s).tr('[]""','')
+  puts @collected_name
 end
 
 And(/^client collects first breeds id from breeds lists$/) do 
-@list_cats_id = @response_get.map{|d| d["id"]}.to_a
-collected_id = @list_cats_id.first(1)
-@collected_first_id = (collected_id.to_s).tr('[]""','')
-puts @collected_first_id
+  @list_cats_id = @response_get.map{|d| d["id"]}.to_a
+  collected_id = @list_cats_id.first(1)
+  @collected_first_id = (collected_id.to_s).tr('[]""','')
+  puts @collected_first_id
 end
 
 When(/^client search cat breed name by inputing founded cat breeds name$/) do
